@@ -11,10 +11,7 @@ export class WebShareService extends ShareService {
     }
 
     public share(title: string, text: string, url: string): Observable<boolean> {
-        return fromPromise(this._window.navigator.share({
-            title: title,
-            text: text,
-            url: url
-        }));
+        // TODO: Implement
+        throw new Error('not implemented');
     }
 }

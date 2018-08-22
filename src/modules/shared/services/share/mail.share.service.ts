@@ -11,9 +11,7 @@ export class MailShareService extends ShareService {
     }
 
     public share(title: string, text: string, url: string): Observable<boolean> {
-        const body = url ? `${text}\r\n${url}` : text;
-        this._window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-
-        return of(true);
+        // TODO: Implement
+        throw new Error('not implemented');
     }
 }
