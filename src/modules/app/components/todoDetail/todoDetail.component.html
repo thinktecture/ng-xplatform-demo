@@ -3,7 +3,9 @@
         <h1>{{ todoItem.text }}</h1>
     </header>
     <div class="content camera-image">
-        <img *ngIf="image$ | async as image" [src]="image">
+        {{ todoItem | json }}
+
+        <!-- TODO: Add img here -->
     </div>
 
     <button class="tt__fab" (click)="getPicture()">

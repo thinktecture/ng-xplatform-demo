@@ -8,15 +8,10 @@ import {WebShareService} from './web.share.service';
 
 export const ShareServiceFactory = (featureService: FeatureService, window: Window) => {
     const feature = featureService.detectFeature(BrowserFeatureKey.WebShareAPI);
-    if (feature.supported) {
-        return new WebShareService(window);
-    }
 
-    if (environment.mobile) {
-        return new CordovaShareService(window);
-    }
-
-    return new MailShareService(window);
+    // TODO: if feature.supported, return new WebShareService
+    // TODO: if environment.mobile, return new CordovaShareService
+    // TODO: otherwise, return new MailShareService
 };
 
 export const ShareServiceFactoryDeps = [FeatureService, WINDOW];

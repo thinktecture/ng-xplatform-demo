@@ -4,7 +4,8 @@ import {MobileCameraService} from './mobile.camera.service';
 import {WebCameraService} from './web.camera.service';
 
 export const CameraServiceFactory = (window: Window) => {
-    return environment.mobile ? new MobileCameraService(window) : new WebCameraService(window);
+    // TODO: if environment.mobile, return MobileCameraService
+    // TODO: otherwise, return WebCameraService
 };
 
 export const CameraServiceFactoryDeps = [WINDOW];

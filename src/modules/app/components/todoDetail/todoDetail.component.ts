@@ -17,7 +17,7 @@ export class TodoDetailComponent implements OnInit {
     public image$: Observable<string>;
 
     constructor(private readonly _activatedRoute: ActivatedRoute, private readonly _todoService: TodoService,
-                private readonly _cameraService: CameraService, private readonly _changeDetectorRef: ChangeDetectorRef) {
+                /* TODO: Inject CameraService */ private readonly _changeDetectorRef: ChangeDetectorRef) {
     }
 
     public ngOnInit(): void {
@@ -28,7 +28,6 @@ export class TodoDetailComponent implements OnInit {
     }
 
     public getPicture(): void {
-        this.image$ = this._cameraService.getPicture()
-            .pipe(finalize(() => this._changeDetectorRef.detectChanges()));
+        // TODO
     }
 }
