@@ -6,7 +6,7 @@ import Dexie from 'dexie';
 })
 export class DatabaseService extends Dexie {
     constructor() {
-        super('XplatformWorkshop');
+        super('ThinktectureWorkshop');
         this._initDatabase();
     }
 
