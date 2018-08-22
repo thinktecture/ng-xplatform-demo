@@ -25,10 +25,10 @@ export class WebCameraService extends CameraService {
             .then((stream: any) => {
                 return new Promise((resolve, reject) => {
                     try {
-                        const vendorURL = this._window.URL || this._window['webkitURL'];
                         const doc = document;
-                        const videoElement = doc.createElement('video');
-                        videoElement.src = vendorURL.createObjectURL(stream);
+                        const videoElement = doc.createElement('video') as HTMLVideoElement;
+                        videoElement.srcObject = stream;
+                        videoElement.setAttribute('playsinline', '');
                         videoElement.play();
 
                         videoElement.addEventListener('canplay', () => {
