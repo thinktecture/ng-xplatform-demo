@@ -11,31 +11,37 @@ export class TodoService {
 
     public getAll(includeDeleted: boolean): Promise<Array<ITodoItem>> {
         if (includeDeleted) {
-            return this.table.toArray();
+            // TODO
         }
-        return this.table.filter(item => !item.deleted).reverse().toArray();
+        // TODO
+        throw new Error('not implemented');
     }
 
     public async get(id: string): Promise<ITodoItem> {
-        return (await this.table.filter(item => item.syncId === id && !item.deleted).toArray())[0];
+        // TODO
+        throw new Error('not implemented');
     }
 
     public add(item: ITodoItem): Promise<number> {
-        return this.table.put(item);
+        // TODO
+        throw new Error('not implemented');
     }
 
     public async update(item: ITodoItem): Promise<boolean> {
         item.changed = true;
-        return !!(await this.table.update(item.id, item));
+        // TODO
+        throw new Error('not implemented');
     }
 
     public async delete(item: ITodoItem): Promise<boolean> {
         if (!item.syncId) {
-            await this.table.delete(item.id);
+            // TODO
+            throw new Error('not implemented');
             return Promise.resolve(true);
         } else {
             item.deleted = true;
-            return !!(await this.table.update(item.id, item));
+            // TODO
+            throw new Error('not implemented');
         }
     }
 
@@ -52,4 +58,3 @@ export class TodoService {
         return this.table.clear();
     }
 }
-

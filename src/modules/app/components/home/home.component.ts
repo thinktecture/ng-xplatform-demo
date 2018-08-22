@@ -60,12 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     public sync(): void {
-        fromPromise(this._todoService.getAll(true))
-        .pipe(
-            switchMap(items => this._syncService.sync(items)),
-            switchMap(result => fromPromise(this._todoService.overwrite(result as Array<ITodoItem>))),
-            take(1)
-        ).subscribe(items => this.items = items);
+        // TODO
     }
 
     private _removeItemFromList(item: ITodoItem): void {
