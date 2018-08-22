@@ -3,7 +3,9 @@ import {BrowserFeatureKey} from '../models/browserFeatureKey.model';
 import {BrowserFeature} from '../models/browserFeature.model';
 import {WINDOW} from './window.token';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class FeatureService {
     private _nav: Navigator;
 

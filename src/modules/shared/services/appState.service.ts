@@ -2,7 +2,9 @@ import {Inject, Injectable, Renderer2, RendererFactory2} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {WINDOW} from './window.token';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class AppStateService {
     private _renderer: Renderer2;
     private readonly _stateChange = new BehaviorSubject<boolean>(true);

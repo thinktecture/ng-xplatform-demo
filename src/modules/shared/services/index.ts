@@ -15,13 +15,5 @@ import {SyncServiceRef} from './sync.service.ref';
 import {TodoServiceRef} from './todo.service.ref';
 
 export const SHARED_SERVICES = [
-    FeatureService,
-    { provide: TodoService, useClass: TodoServiceRef },
-    { provide: ApiService, useClass: ApiServiceRef },
-    { provide: SyncService, useClass: SyncServiceRef },
     { provide: DatabaseService, useClass: DatabaseServiceRef },
-    { provide: ShareService, useFactory: ShareServiceFactory, deps: ShareServiceFactoryDeps },
-    { provide: CameraService, useFactory: CameraServiceFactory, deps: CameraServiceFactoryDeps },
-    NotificationService,
-    AppStateService,
 ];

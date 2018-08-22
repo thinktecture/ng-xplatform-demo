@@ -4,7 +4,9 @@ import {AppNotification} from '../models/appNotification.model';
 import {Injectable} from '@angular/core';
 import {BrowserFeatureKey} from '../models/browserFeatureKey.model';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class NotificationService {
     public notifications = new Subject<AppNotification>();
 
