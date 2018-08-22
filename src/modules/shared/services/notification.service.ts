@@ -1,5 +1,5 @@
 import {FeatureService} from './feature.service';
-import {Subject} from 'rxjs/Subject';
+import {Subject} from 'rxjs';
 import {AppNotification} from '../models/appNotification.model';
 import {Injectable} from '@angular/core';
 import {BrowserFeatureKey} from '../models/browserFeatureKey.model';
