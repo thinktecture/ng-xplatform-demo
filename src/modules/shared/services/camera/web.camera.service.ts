@@ -1,6 +1,5 @@
 import {Inject} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {fromPromise} from 'rxjs/observable/fromPromise';
+import {Observable, from as fromPromise} from 'rxjs';
 import {CameraService} from '../base/camera.service';
 import {WINDOW} from '../window.token';
 

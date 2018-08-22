@@ -1,5 +1,5 @@
 import {Inject} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CameraService} from '../base/camera.service';
 import {WINDOW} from '../window.token';
 import {normalizeURL} from 'ionic-angular/util/util';
