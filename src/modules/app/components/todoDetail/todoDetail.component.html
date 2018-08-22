@@ -1,9 +1,9 @@
-<div class="tt__card" *ngIf="todoItem$ | async as todoItem">
+<div class="tt__card" *ngIf="false"><!-- TODO: *ngIf condition? -->
     <header>
-        <h1>{{ todoItem.text }}</h1>
+        <h1><!-- TODO: Show title --></h1>
     </header>
     <div class="content camera-image">
-        <img *ngIf="image$ | async as image" [src]="image">
+        <!-- TODO: Show json -->
     </div>
 
     <button class="tt__fab" (click)="getPicture()">

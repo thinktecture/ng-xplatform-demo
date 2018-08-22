@@ -8,13 +8,7 @@ export const ROUTES: Routes = [
         pathMatch: 'full',
         redirectTo: '/home'
     },
-    {
-        path: 'home/:id',
-        component: TodoDetailComponent,
-        data: {
-            title: 'Thinktecture Todo',
-        },
-    },
+    /* TODO: Add detail route */
     {
         path: 'home',
         component: HomeComponent,
