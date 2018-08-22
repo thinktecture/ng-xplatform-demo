@@ -1,6 +1,6 @@
 import {SyncService} from './base/sync.service';
 import {ApiService} from './base/api.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {ISyncItem} from '../models/contracts/syncItem.interface';
 import {map} from 'rxjs/operators';

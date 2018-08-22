@@ -4,9 +4,8 @@ import {ITodoItem} from '../../../shared/models/contracts/todoItem.interface';
 import {SyncService} from '../../../shared/services/base/sync.service';
 import {TodoListComponent} from '../todoList/todoList.component';
 import {AppStateService} from '../../../shared/services/appState.service';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription, from as fromPromise} from 'rxjs';
 import {switchMap,take} from 'rxjs/operators';
-import {fromPromise} from 'rxjs/observable/fromPromise';
 
 @Component({
     templateUrl: 'home.component.html'
