@@ -50,7 +50,7 @@ function buildTrayIcon() {
   ]);
 
   trayApp = new Tray(trayIconPath);
-  trayApp.setToolTip('ngEurope Sample');
+  trayApp.setToolTip('Thinktecture Sample');
   trayApp.setContextMenu(contextMenu);
 }
 
