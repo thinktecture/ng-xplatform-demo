@@ -1,12 +1,10 @@
 import {Injectable} from '@angular/core';
-import {TodoServiceRef} from '../todo.service.ref';
 import {DatabaseService} from './database.service';
 import {ITodoItem} from '../../models/contracts/todoItem.interface';
 import Dexie from 'dexie';
 
 @Injectable({
-    providedIn: 'root',
-    useClass: TodoServiceRef
+    providedIn: 'root'
 })
 export class TodoService {
     protected table: Dexie.Table<ITodoItem, number>;

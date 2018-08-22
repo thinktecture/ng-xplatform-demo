@@ -1,16 +1,38 @@
 import {Injectable} from '@angular/core';
-import {ApiServiceRef} from '../api.service.ref';
+import {Observable} from 'rxjs/Rx';
+import {HttpClient} from '../../../../../node_modules/@angular/common/http';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
-    providedIn: 'root',
-    useClass: ApiServiceRef
+    providedIn: 'root'
 })
 export abstract class ApiService {
-    public abstract get(urlSuffix: string): any;
+    private _apiBaseUrl: string;
 
-    public abstract put(urlSuffix: string, payload: any): any;
+    constructor(private _httpClient: HttpClient) {
+        this._apiBaseUrl = environment.apiUrl;
+        if (!this._apiBaseUrl.endsWith('/')) {
+            this._apiBaseUrl += '/';
+        }
+    }
 
-    public abstract post(urlSuffix: string, payload: any): any;
+    public get(urlSuffix: string): Observable<any> {
+        return this._httpClient.get(this._getApiUrl(urlSuffix));
+    }
 
-    public abstract delete(urlSuffix: string): any;
+    public put(urlSuffix: string, payload: any): Observable<any> {
+        return this._httpClient.put(this._getApiUrl(urlSuffix), payload);
+    }
+
+    public post(urlSuffix: string, payload: any): Observable<any> {
+        return this._httpClient.post(this._getApiUrl(urlSuffix), payload);
+    }
+
+    public delete(urlSuffix: string): Observable<any> {
+        return this._httpClient.delete(this._getApiUrl(urlSuffix));
+    }
+
+    private _getApiUrl(urlSuffix: string): string {
+        return `${this._apiBaseUrl}${urlSuffix}`;
+    }
 }
