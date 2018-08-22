@@ -1,13 +1,10 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {fromPromise} from 'rxjs/observable/fromPromise';
-import {pluck} from 'rxjs/operators/pluck';
-import {switchMap} from 'rxjs/operators/switchMap';
+import {Observable, from as fromPromise} from 'rxjs';
+import {pluck, switchMap, finalize} from 'rxjs/operators';
 import {ITodoItem} from '../../../shared/models/contracts/todoItem.interface';
 import {CameraService} from '../../../shared/services/base/camera.service';
 import {TodoService} from '../../../shared/services/base/todo.service';
-import {finalize} from 'rxjs/operators';
 
 @Component({
     templateUrl: './todoDetail.component.html'

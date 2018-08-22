@@ -1,19 +1,16 @@
 import {Inject, Injectable} from '@angular/core';
 import {BrowserFeatureKey} from '../models/browserFeatureKey.model';
 import {BrowserFeature} from '../models/browserFeature.model';
-import {detect} from 'detect-browser';
 import {WINDOW} from './window.token';
 
 @Injectable()
 export class FeatureService {
     private _nav: Navigator;
-    private _browser: any;
 
     private _features: any;
 
     constructor(@Inject(WINDOW) private _window: Window) {
         this._nav = this._window.navigator;
-        this._browser = detect();
 
         this._features = {
             [BrowserFeatureKey.ServiceWorker]: 'serviceWorker' in this._window.navigator,
@@ -46,11 +43,11 @@ export class FeatureService {
     }
 
     public getBrowserName() {
-        return this._browser.name;
+        return '?';
     }
 
     public getBrowserVersion() {
-        return this._browser.version;
+        return '?';
     }
 
     public isMobileAndroid(): boolean {

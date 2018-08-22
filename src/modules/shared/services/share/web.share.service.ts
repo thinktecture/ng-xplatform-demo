@@ -1,6 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {fromPromise} from 'rxjs/observable/fromPromise';
+import {Observable, from as fromPromise} from 'rxjs';
 import {ShareService} from '../base/share.service';
 import {WINDOW} from '../window.token';
 
